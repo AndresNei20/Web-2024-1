@@ -1,7 +1,10 @@
 import React from 'react'
+import { Nav } from './Nav/Nav'
 
 export const Header = () => {
   return (
-    <header>hello i'm 1st</header>
+    <header>
+      <Nav></Nav>
+    </header>
   )
 }
