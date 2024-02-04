@@ -54,3 +54,51 @@ header{
   color: #fcfcfc;
   text-decoration: none;
 }
+
+
+/*body*/
+
+.movie_cards{
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  margin-left: 5%;
+
+}
+
+.cards{
+  width: 45%;
+  height: auto;
+  margin: 0px 6px 0px 6px;
+  border-radius: 10px;
+}
+
+h4{
+  margin-left: 5%;
+}
+
+.yellow_titles{
+  color: #e8b301 ;
+}
+
+.large_movie_cards{
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  margin-left: 5%;
+}
+
+.large_cards{
+  width: auto;
+  height: 250px;
+  margin: 0px 6px 0px 6px;
+  border-radius: 10px;
+}
+
+
+.texted_movie_cards{
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  margin-left: 5%;
+}
