@@ -134,6 +134,16 @@ header{
   }
 }
 
+/*label title*/
+.label_title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.prime_tag{
+  color:#3ea3f5;
+}
 
 .movie_cards{
   display: flex;
