@@ -11,6 +11,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Variables */
+
+  --sm-breakpoint:390px; /* variable */
+  --lg-breakpoint:844px; /* variable */
+  /* --primary-color: ; */
+  --secundary-color: #3ea3f5;
+  --third-color:#e8b301;
+
 }
 
 body {
@@ -124,10 +133,10 @@ header{
     left: -100%;
   }
   85%{
-    left: -100%;
+    left: -75%;
   }
   90%{
-    left: 0;
+    left: -50%;
   }
   100%{
     left: 0;
@@ -142,22 +151,42 @@ header{
 }
 
 .prime_tag{
-  color:#3ea3f5;
+  color: var(--secundary-color);
 }
 
 .movie_cards{
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
+  align-items: center;
   overflow-x: auto;
   margin-left: 5%;
-
 }
 
-.cards{
-  width: 45%;
-  height: auto;
-  margin: 0px 6px 0px 6px;
+.cards {
+  width: 150px;
+  height: 100px;
   border-radius: 10px;
+}
+
+figure{
+  width: 100%;
+  margin: 0px 6px 0px 6px;
+}
+
+.rent_text{
+  font-size: x-small;
+  
+}
+
+.text_span{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.text_span svg{
+  color: var(--third-color);
 }
 
 h4{
@@ -165,7 +194,7 @@ h4{
 }
 
 .yellow_titles{
-  color: #e8b301 ;
+  color: var(--third-color) ;
 }
 
 .large_movie_cards{
@@ -198,6 +227,7 @@ footer{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 
 footer a{

@@ -3,13 +3,17 @@ import React from 'react'
 export const Nav = () => {
   return (
     <div className='navbar'>
-    <select name='Menu' id='menu' defaultValue="menu">
+
+    <button>
+      <img src="https://cdn-icons-png.flaticon.com/512/660/660376.png" alt="hamburguer menu" width='20px'/>
+    </button>
+    {/* <select name='Menu' id='menu' defaultValue="menu">
         <option value="menu" disabled hidden>Menu</option>
         <option value="home">Home</option>
         <option value="store">Store</option>
         <option value="categories">Categories</option>
         <option value="my stuff">My stuff</option>
-    </select>
+    </select> */}
 
     <a className='title' href=""><strong>prime video</strong></a>
 
