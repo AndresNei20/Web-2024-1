@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: #fefefe;
-  background-color: #00050D;
+  background-color: var(--bg-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,6 +19,7 @@
   /* --primary-color: ; */
   --secundary-color: #3ea3f5;
   --third-color:#e8b301;
+  --bg-color: #00050d;
 
   --menu-bg:#191e25;
   --menu-font-color:#aaaaaa;
@@ -75,9 +76,20 @@ header nav{
   right: 0px;
   height: 100%;
   z-index: 3;
+/* * display: none; This display allows to watch the hamburguer menu */ 
 }
 
 .menu_btn{
+  background-color: var(--bg-color);
+  color: white;
+  font-size: larger;
+  border: none;
+  width: 25%;
+  margin-left: -2%;
+  padding-bottom: 3%;
+  padding-top: 3%;
+}
+.menu_btn_active{
   background-color: var(--menu-bg);
   color: var(--menu-font-color);
   font-size: larger;
@@ -104,6 +116,10 @@ ul li{
   flex-direction: row;
   margin: 0% 0% 7% 0%;
   color:var(--menu-font-color) ;
+}
+
+ul li img{
+  margin-right: 10px;
 }
 
 

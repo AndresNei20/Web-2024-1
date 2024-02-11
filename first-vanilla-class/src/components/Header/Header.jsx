@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import icon1 from '../../assets/icons/search.svg'
-import { menu_items } from "../../data/menu_items";
-
+import { menu_items } from "../../data/menu_items"; 
 
 console.log(menu_items  )
 
 export const Header = () => {
+
+  const [showMenu, setShowMenu] = useState(false)
+
   return (
     <header >
       <div className="navbar">
-        <button className="menu_btn">
+        <button className={`menu_btn ${showMenu ? 'menu_btn_active' : ''}`} 
+                onClick={() => {setShowMenu(!showMenu)}}>
           Menu
         </button>
 
-        <nav>
+        {showMenu && (<nav>
           <ul className="menu_list">
             {
               menu_items.map(({id, text, icon}) => {
@@ -25,7 +28,7 @@ export const Header = () => {
               })
             }
           </ul>
-        </nav>
+        </nav>)}
 
         <a className="title" href="">
           <strong>prime video</strong>
