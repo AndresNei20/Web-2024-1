@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const LargeMovieCards = ({movies}) => {
   return (
     <div className='large_movie_cards'>

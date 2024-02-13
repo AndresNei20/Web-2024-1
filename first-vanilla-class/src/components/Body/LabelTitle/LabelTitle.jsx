@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const LabelTitle = ({text}) => {
   return (
     <span className='label_title'>

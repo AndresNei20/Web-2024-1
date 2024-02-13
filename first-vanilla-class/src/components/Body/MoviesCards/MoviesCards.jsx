@@ -1,6 +1,3 @@
-import React from 'react'
-
-
 export const MoviesCards = ({movies, showText = false}) => {
   return (
     <div className='movie_cards'>

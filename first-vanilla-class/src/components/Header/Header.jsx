@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import icon1 from '../../assets/icons/search.svg'
 import { menu_items } from "../../data/menu_items"; 
+import { Nav } from "./nav";
 
 console.log(menu_items  )
 
@@ -15,21 +16,7 @@ export const Header = () => {
                 onClick={() => {setShowMenu(!showMenu)}}>
           Menu
         </button>
-
-        {showMenu && (<nav>
-          <ul className="menu_list">
-            {
-              menu_items.map(({id, text, icon}) => {
-                return(
-                  <li key={id}>
-                    <img src={icon} alt={text}/> {text}
-                  </li>
-                )
-              })
-            }
-          </ul>
-        </nav>)}
-
+        <Nav items={menu_items} showMenu={showMenu}/> 
         <a className="title" href="">
           <strong>prime video</strong>
         </a>

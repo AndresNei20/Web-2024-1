@@ -1,4 +1,3 @@
-import React from 'react'
 import { MoviesCards } from './MoviesCards/MoviesCards'
 import { LargeMovieCards } from './LargeMovieCards/LargeMovieCards'
 import { Slider } from './Slider/Slider'
