@@ -9,6 +9,8 @@ export const Header = () => {
 
   const [showMenu, setShowMenu] = useState(false)
 
+  const showDeskMenu = true
+
   return (
     <header >
       <div className="navbar">
@@ -16,12 +18,15 @@ export const Header = () => {
                 onClick={() => {setShowMenu(!showMenu)}}>
           Menu
         </button>
+
         <Nav items={menu_items} showMenu={showMenu}/> 
+
         <a className="title" href="">
           <strong>prime video</strong>
         </a>
 
-        <a href="">
+        <a  className="search"
+            onClick={()=>{alert('Its a layout, that`s all!')}} href="">
           <img
             width="30px"
             height="30px"
@@ -30,7 +35,7 @@ export const Header = () => {
           />
         </a>
 
-        <a href="">
+        <a onClick={()=>{alert('Its a layout, that`s all!')}} href="">
           <img
             width="30px"
             height="30px"
