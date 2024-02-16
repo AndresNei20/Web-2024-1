@@ -1,20 +1,31 @@
-export const Nav = ({items, showMenu}) => {
+import { useEffect, useState } from 'react';
 
-    return (
-    showMenu 
-        ? (<nav>
-                <ul className={`menu_list`}>
-                {
-                    items.map(({id, text, icon}) => {
-                    return(
-                        <li key={id}>
-                        <img src={icon} alt={text}/> {text}
-                        </li> 
-                    )
-                    })
-                }
-                </ul>
-            </nav>)
-      : null
-  )
-}
+export const Nav = ({ items, showMenu }) => {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 770);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 770);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <nav style={{ display: (showMenu || isDesktop) ? 'block' : 'none' }}>
+      <ul className="menu_list">
+        {items.map(({ id, text, icon }) => (
+          <li key={id}>
+            <img src={icon} alt={text} /> {text}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+export default Nav;

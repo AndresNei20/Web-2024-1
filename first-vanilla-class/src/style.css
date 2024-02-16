@@ -344,6 +344,7 @@ span strong{
   }
   
   header nav{
+    display: block;
     width: 55%;
     position: relative;
     top: 0px  ;

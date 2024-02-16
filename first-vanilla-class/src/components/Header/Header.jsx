@@ -9,8 +9,6 @@ export const Header = () => {
 
   const [showMenu, setShowMenu] = useState(false)
 
-  const showDeskMenu = true
-
   return (
     <header >
       <div className="navbar">
