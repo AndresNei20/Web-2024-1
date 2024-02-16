@@ -1,47 +1,53 @@
-import { useState } from "react";
+import { useState } from 'react'
 import icon1 from '../../assets/icons/search.svg'
-import { menu_items } from "../../data/menu_items"; 
-import { Nav } from "./nav";
-
-console.log(menu_items  )
+import { menuItems } from '../../data/menuItems'
+import { Nav } from './nav'
 
 export const Header = () => {
-
   const [showMenu, setShowMenu] = useState(false)
 
   return (
-    <header >
-      <div className="navbar">
-        <button className={`menu_btn ${showMenu ? 'menu_btn_active' : ''}`} 
-                onClick={() => {setShowMenu(!showMenu)}}>
+    <header>
+      <div className='navbar'>
+        <button
+          className={`menu_btn ${showMenu ? 'menu_btn_active' : ''}`}
+          onClick={() => {
+            setShowMenu(!showMenu)
+          }}
+        >
           Menu
         </button>
 
-        <Nav items={menu_items} showMenu={showMenu}/> 
+        <Nav items={menuItems} showMenu={showMenu} />
 
-        <a className="title" href="">
+        <a className='title'>
           <strong>prime video</strong>
         </a>
 
-        <a  className="search"
-            onClick={()=>{alert('Its a layout, that`s all!')}} href="">
-          <img
-            width="30px"
-            height="30px"
-            src= {icon1}
-            alt="search--v1"
-          />
+        <a
+          className='search'
+          onClick={() => {
+            console.log('Its a layout, that`s all!')
+          }}
+          href=''
+        >
+          <img width='30px' height='30px' src={icon1} alt='search--v1' />
         </a>
 
-        <a onClick={()=>{alert('Its a layout, that`s all!')}} href="">
+        <a
+          onClick={() => {
+            console.log('Its a layout, that`s all!')
+          }}
+          href=''
+        >
           <img
-            width="30px"
-            height="30px"
-            src="https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/adult-1.png"
-            alt="search--v1"
+            width='30px'
+            height='30px'
+            src='https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/adult-1.png'
+            alt='search--v1'
           />
         </a>
       </div>
     </header>
-  );
-};
+  )
+}
