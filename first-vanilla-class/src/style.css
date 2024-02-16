@@ -118,6 +118,11 @@ ul li{
   color:var(--menu-font-color) ;
 }
 
+ul li:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 ul li img{
   margin-right: 10px;
 }
@@ -318,17 +323,20 @@ span strong{
   .navbar{
     display: flex;
     flex-direction: row;
+    margin-top: 25px;
     width: 80%;
     padding: 10px;
     justify-content: space-between; 
     align-items: center;
-    background-color: #3ea3f5;
+    background-color: var(--bg-color);
+    border-radius: 14px;
 
   }
   
   .title{
     color: #fcfcfc;
     text-decoration: none;
+    font-size: larger;
   }
 
   .search{
@@ -336,9 +344,11 @@ span strong{
   }
   
   header nav{
-    width: 100%;
+    width: 55%;
+    position: relative;
+    top: 0px  ;
     margin: 0;
-    background-color: var(--menu-bg);
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: row;
     height: 40px;
@@ -349,19 +359,13 @@ span strong{
    display: none;
   }
   .menu_btn_active{
-    background-color: var(--menu-bg);
-    color: var(--menu-font-color);
-    font-size: larger;
-    border: none;
-    width: 25%;
-    margin-left: -2%;
-    padding-bottom: 3%;
-    padding-top: 3%;
+    display: none;
   }
   
   
   .menu_list{
     margin: 0;
+    margin-left: 10%;
     padding: 15px 0px 0px 15px;
     list-style: none;
     display: flex;
@@ -373,8 +377,8 @@ span strong{
   ul li{
     display: flex;
     flex-direction: row;
-    margin: 0% 0% 7% 0%;
-    color:var(--menu-font-color) ;
+    margin: 0px 5px 25px 5px; /* * its not perfect */
+    color: var(--menu-font-color);
   }
   
   ul li img{

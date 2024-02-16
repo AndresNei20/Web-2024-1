@@ -21,7 +21,7 @@ export const menu_items = [
     },
     {
         id:crypto.randomUUID(),
-        text: 'My stuff',
+        text: 'Stuff',
         icon: folders,
     },
 ]
