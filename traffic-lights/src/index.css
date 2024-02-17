@@ -14,7 +14,8 @@
 }
 
 .traffic-lights{
-  background-color: aliceblue;
+  background-color: #3c3c3c;
+  transition: 300ms;
   width: 50%;
   height: 500px;
   color: #242424;
@@ -22,24 +23,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 20px;
+}
+
+.inner-background{
+  background-color: #242424;
+  width: 30%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10%;
+  border-radius: 60px;
+  justify-content: center;
 }
 
 .red-light{
   background-color: red;
-  width: 10%;
+  transition: 300ms;
+  width: 30%;
   border-radius: 100%;
   margin: 5%;
 }
 .yellow-light{
   background-color: yellow;
-  width: 10%;
+  transition: 300ms;
+  width: 30%;
   border-radius: 100%;
   margin: 5%;
 }
 .green-light{
   background-color: green;
-  width: 10%;
+  transition: 300ms;
+  width: 30%;
   border-radius: 100%;
   margin: 5%;
+}
+
+h2{
+  color: #fafafa;
 }
 

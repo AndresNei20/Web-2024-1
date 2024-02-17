@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className='traffic-lights' style={{backgroundColor: color}}>
-      <p>hello</p>
+      <div className='inner-background'>
       <section className='red-light'
                 onMouseEnter={()=>setColor('#cc3232')}
                 onMouseLeave={()=>setColor('')}>
@@ -22,6 +22,8 @@ function App() {
                       onMouseLeave={()=>setColor('')}>
       <p>3</p>
       </section>
+      </div>
+      <h2>Just try the traffic lights, you can change it!</h2>
     </div>
   )
 }
