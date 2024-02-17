@@ -7,17 +7,19 @@ import { moviesVerticalCards } from '../../data/moviesVertical'
 import { dramaMovies } from '../../data/dramaMovies'
 import { crimeMovies } from '../../data/crimeMovies'
 import { fantasyMovies } from '../../data/fantasyMovies'
+import { slideImages } from '../../data/slideImages'
 
 const moviesFantasy = fantasyMovies
 const moviesCrime = crimeMovies
 const moviesDrama = dramaMovies
 const moviesCard = moviesCards
 const movieVerticalCard = moviesVerticalCards
+const slides = slideImages
 
 export const Body = () => {
   return (
     <main>
-      <Slider />
+      <Slider items={slides} />
 
       <LabelTitle text='Recommended movies' />
       <MoviesCards movies={moviesCard} />

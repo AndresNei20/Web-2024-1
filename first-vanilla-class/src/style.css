@@ -35,6 +35,10 @@ body {
   box-sizing: border-box;
 }
 
+body::-webkit-scrollbar{
+  background-color: var(--bg-color);
+}
+
 #app{
   width: 100%;
   margin: 0;
@@ -43,6 +47,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+/* *Header */
 
 header{
   display: flex;
@@ -129,7 +134,7 @@ ul li img{
 
 
 
-/*body*/
+/**body*/
 
 /*slider*/
 .slider{
@@ -226,6 +231,10 @@ ul li img{
   margin-left: 5%;
 }
 
+.movie_cards::-webkit-scrollbar{
+  width: 0;
+}
+
 .cards {
   width: 150px;
   height: 100px;
@@ -268,6 +277,10 @@ h4{
   margin-left: 5%;
 }
 
+.large_movie_cards::-webkit-scrollbar{
+  width: 0;
+}
+
 .large_cards{
   width: auto;
   height: 250px;
@@ -285,7 +298,7 @@ h4{
 
 
 
-/*footer*/
+/**footer*/
 
 footer{
   display: flex;
@@ -386,5 +399,45 @@ span strong{
     margin-right: 10px;
   }
   
+
+
+/* *Starts the body responsive */
+
+.slider{
+  margin-top: 10%;
+  height: 350px;
 }
 
+.slide img{
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 350px;
+  max-height: 350px;
+}
+
+.cards {
+  width: 300px;
+  height: 180px;
+  border-radius: 10px;
+}
+
+.large_cards {
+  width: auto;
+  height: 400px;
+  margin: 0px 6px 0px 6px;
+  border-radius: 10px;
+}
+
+.text_span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 40px;
+}
+
+.rent_text {
+  font-size: medium;
+}
+
+}
