@@ -7,7 +7,6 @@ export const Nav = ({ items, showMenu }) => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 770)
     }
-
     window.addEventListener('resize', handleResize)
 
     return () => {

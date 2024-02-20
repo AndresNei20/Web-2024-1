@@ -1,0 +1,7 @@
+{   
+ "editor.formatOnSave": false, // By default it's true, deactivate it to avoid standard eslint format conflict
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+    "eslint.format.enable": true,
+}
