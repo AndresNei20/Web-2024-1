@@ -1,5 +1,5 @@
 export const Footer = () => {
   return (
-    <footer>Soy elFooter</footer>
+    <footer>Soy el Footer</footer>
   )
 }
