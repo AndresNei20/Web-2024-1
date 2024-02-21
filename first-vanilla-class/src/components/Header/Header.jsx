@@ -10,7 +10,7 @@ export const Header = () => {
     <header>
       <div className='navbar'>
         <button
-          className={`menu_btn ${showMenu ? 'menu_btn_active' : ''}`}
+          className={`menu-btn ${showMenu ? 'menu-btn-active' : ''}`}
           onClick={() => {
             setShowMenu(!showMenu)
           }}

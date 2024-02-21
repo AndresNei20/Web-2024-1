@@ -27,7 +27,7 @@ export const Body = () => {
       <LabelTitle text='Amazon originals' showText='true' />
       <LargeMovieCards movies={movieVerticalCard} />
 
-      <h4 className='yellow_titles'>Popular movies</h4>
+      <h4 className='yellow-titles'>Popular movies</h4>
       <MoviesCards movies={moviesCrime} showText />
 
       <LabelTitle text='Drama TV' />

@@ -1,6 +1,6 @@
 export const MoviesCards = ({ movies, showText = false }) => {
   return (
-    <div className='movie_cards'>
+    <div className='movie-cards'>
       {movies.map(({ id, src, title }) => (
         <figure key={id}>
           <img
@@ -9,9 +9,9 @@ export const MoviesCards = ({ movies, showText = false }) => {
             alt={title}
           />
           {showText && (
-            <span className='text_span'>
+            <span className='text-span'>
               <img src='./src/assets/icons/yellow_shopping_bag.svg' alt='' />
-              <p className='rent_text'>Rent or buy</p>
+              <p className='rent-text'>Rent or buy</p>
             </span>
           )}
         </figure>

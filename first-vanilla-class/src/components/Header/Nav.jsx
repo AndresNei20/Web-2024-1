@@ -16,7 +16,7 @@ export const Nav = ({ items, showMenu }) => {
 
   return (
     <nav style={{ display: (showMenu || isDesktop) ? 'block' : 'none' }}>
-      <ul className='menu_list'>
+      <ul className='menu-list'>
         {items.map(({ id, text, icon }) => (
           <li key={id}>
             <img src={icon} alt={text} /> {text}

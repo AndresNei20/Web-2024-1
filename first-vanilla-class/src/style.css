@@ -84,7 +84,7 @@ header nav{
   /* *display: none;  */
 }
 
-.menu_btn{
+.menu-btn{
   background-color: var(--bg-color);
   color: white;
   font-size: larger;
@@ -94,7 +94,7 @@ header nav{
   padding-bottom: 3%;
   padding-top: 3%;
 }
-.menu_btn_active{
+.menu-btn-active{
   background-color: var(--menu-bg);
   color: var(--menu-font-color);
   font-size: larger;
@@ -106,7 +106,7 @@ header nav{
 }
 
 
-.menu_list{
+.menu-list{
   margin: 0;
   padding: 15px 0px 0px 15px;
   list-style: none;
@@ -143,7 +143,7 @@ ul li img{
   overflow: hidden;
 }
 
-.slide_figure{
+.slide-figure{
   display: flex;
   flex-direction: row;
   position: relative;
@@ -213,17 +213,17 @@ ul li img{
 }
 
 /*label title*/
-.label_title{
+.label-title{
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.prime_tag{
+.prime-tag{
   color: var(--secundary-color);
 }
 
-.movie_cards{
+.movie-cards{
   display: flex;
   flex-direction: row; 
   align-items: center;
@@ -231,7 +231,7 @@ ul li img{
   margin-left: 5%;
 }
 
-.movie_cards::-webkit-scrollbar{
+.movie-cards::-webkit-scrollbar{
   width: 0;
 }
 
@@ -246,19 +246,19 @@ figure{
   margin: 0px 6px 0px 6px;
 }
 
-.rent_text{
+.rent-text{
   font-size: x-small;
   
 }
 
-.text_span{
+.text-span{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.text_span svg{
+.text-span svg{
   color: var(--third-color);
 }
 
@@ -266,22 +266,34 @@ h4{
   margin-left: 5%;
 }
 
-.yellow_titles{
+.yellow-titles{
   color: var(--third-color) ;
 }
 
-.large_movie_cards{
+.large-movie-cards{
   display: flex;
   flex-direction: row;
   overflow-x: auto;
   margin-left: 5%;
 }
 
-.large_movie_cards::-webkit-scrollbar{
+.large-movie-cards::-webkit-scrollbar{
   width: 0;
 }
 
-.large_cards{
+.large-card-container{
+  background-color: #3ea3f5;
+}
+
+/* .large-cards-video{
+  height: 400px;
+} */
+
+video{
+  height: 400px;
+}
+
+.large-cards{
   width: auto;
   height: 250px;
   margin: 0px 6px 0px 6px;
@@ -289,7 +301,7 @@ h4{
 }
 
 
-.texted_movie_cards{
+.texted-movie-cards{
   display: flex;
   flex-direction: row;
   overflow-x: auto;
@@ -369,15 +381,15 @@ span strong{
     z-index: 3;
   }
   
-  .menu_btn{
+  .menu-btn{
    display: none;
   }
-  .menu_btn_active{
+  .menu-btn-active{
     display: none;
   }
   
   
-  .menu_list{
+  .menu-list{
     margin: 0;
     margin-left: 10%;
     padding: 15px 0px 0px 15px;
@@ -421,14 +433,14 @@ span strong{
   border-radius: 10px;
 }
 
-.large_cards {
+.large-cards {
   width: auto;
   height: 400px;
   margin: 0px 6px 0px 6px;
   border-radius: 10px;
 }
 
-.text_span {
+.text-span {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -436,7 +448,7 @@ span strong{
   margin-right: 40px;
 }
 
-.rent_text {
+.rent-text {
   font-size: medium;
 }
 
