@@ -8,6 +8,9 @@ export const MoviesCards = ({ movies, showText = false }) => {
             src={src}
             alt={title}
           />
+          <div className='title-overlay'>
+            <h3 className='title'>{title}</h3>
+          </div>
           {showText && (
             <span className='text-span'>
               <img src='./src/assets/icons/yellow_shopping_bag.svg' alt='' />
