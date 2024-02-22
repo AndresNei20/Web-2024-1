@@ -70,6 +70,7 @@ header{
 .title{
   color: #fcfcfc;
   text-decoration: none;
+  cursor: pointer;
 }
 
 header nav{
@@ -81,7 +82,6 @@ header nav{
   right: 0px;
   height: 100%;
   z-index: 3;
-  /* *display: none;  */
 }
 
 .menu-btn{
@@ -335,12 +335,17 @@ footer{
 
 footer a{
   padding: 6px;
-  color: #3ea3f5;
+  color: var(--secundary-color);
   text-decoration: none;
+}
+
+footer a:hover{
+  color:#89caff;
 }
 
 span strong{
   font-size: x-large;
+  cursor: pointer;
 }
 
 
@@ -367,6 +372,7 @@ span strong{
     padding: 10px;
     justify-content: space-between; 
     align-items: center;
+    position: sticky;
     background-color: var(--bg-color);
     border-radius: 14px;
 
