@@ -1,19 +1,28 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import './Button.css'
 
-export const Button = ({text, type, handleClickCount}) => {
-    const handleClick = ()=>{
-        handleClickCount(type)
-    }
+export const Button = ({ text, type, handleClickCount }) => {
+  const handleClick = () => {
+    handleClickCount(type);
+  };
+
+const btnClass = `btn-${type}`;
+
   return (
-    <button 
-        onClick={handleClick} 
-        type={type} 
-        className="btn" 
-        id={`button-${type}`}>{text}</button>
-  )
-}
+    <button
+      className={btnClass}
+      onClick={handleClick}
+      type={type}
+      id={`button-${type}`}
+    >
+      <span>
+        {text}
+      </span>
+    </button>
+  );
+};
 Button.propTypes = {
-    text: PropTypes.string.isRequired,
-    type:PropTypes.string.isRequired,
-    handleClickCount: PropTypes.func.isRequired,
-}
+  text: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  handleClickCount: PropTypes.func.isRequired,
+};

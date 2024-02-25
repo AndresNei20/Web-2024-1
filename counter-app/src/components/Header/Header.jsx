@@ -1,6 +1,8 @@
 export const Header = () => {
   return (
-    <header>soy el Header</header>
+    <header>
+      <h1>Rick and Morty Counter</h1>
+    </header>
   )
 }
 

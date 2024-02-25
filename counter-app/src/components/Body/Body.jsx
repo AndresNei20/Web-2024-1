@@ -16,9 +16,7 @@ const handleClickCount = (value) => {
 }
   return (
     <main>
-      <h1>Counter</h1>
       <RickApiHandler count={count} />
-      <h3>{count}</h3>
       <Button 
         type="decrease"
         text="-"

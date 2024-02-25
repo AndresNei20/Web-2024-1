@@ -1,5 +1,5 @@
 export const Footer = () => {
   return (
-    <footer>Soy el Footer</footer>
+    <footer>&copy; By Andres Neira </footer>
   )
 }

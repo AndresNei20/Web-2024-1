@@ -1,19 +1,20 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
+import { Card } from "../Card/Card";
+import './RickApiHandler.css'
 
 export const RickApiHandler = ({ count }) => {
   const [currentCharacter, setCurrentCharacter] = useState(null);
   const [characterData, setCharacterData] = useState([]);
   const [errors, setErrors] = useState("");
-  console.log(characterData);
 
   const getRickData = async () => {
     try {
       const req = await fetch(`https://rickandmortyapi.com/api/character`);
       const data = await req.json();
+      console.log(characterData);
       setCharacterData(data.results);
       setCurrentCharacter(data.results[count]);
-      console.log(data);
     } catch (error) {
       console.log(error.message);
       setErrors(error.message);
@@ -28,16 +29,11 @@ export const RickApiHandler = ({ count }) => {
     return <>{errors}</>;
   }
   return (
-    <>
+    <div className="card-container">
       {currentCharacter && (
-        <section key={currentCharacter.id}>
-          <img src={currentCharacter.image} />
-          <h3>{currentCharacter.name}</h3>
-          <h4>{currentCharacter.status}</h4>
-          <p>{currentCharacter.species}</p>
-        </section>
+        <Card character={currentCharacter}/>
       )}
-    </>
+    </div>
   );
 };
 
