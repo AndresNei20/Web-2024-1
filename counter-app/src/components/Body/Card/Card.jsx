@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import './Card.css'
+import "./Card.css";
 
 export const Card = ({ character }) => {
   return (
@@ -19,5 +19,5 @@ Card.propTypes = {
     name: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     species: PropTypes.string.isRequired,
-  }).isRequired
+  }).isRequired,
 };

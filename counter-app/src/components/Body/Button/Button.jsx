@@ -6,7 +6,7 @@ export const Button = ({ text, type, handleClickCount }) => {
     handleClickCount(type);
   };
 
-const btnClass = `btn-${type}`;
+  const btnClass = `btn-${type}`;
 
   return (
     <button

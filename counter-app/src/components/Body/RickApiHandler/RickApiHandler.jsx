@@ -29,7 +29,8 @@ export const RickApiHandler = ({ count }) => {
     return <>{errors}</>;
   }
   return (
-    <div className="card-container">
+    <div 
+    className="card-container">
       {currentCharacter && (
         <Card character={currentCharacter}/>
       )}
