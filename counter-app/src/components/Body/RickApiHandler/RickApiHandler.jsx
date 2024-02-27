@@ -22,7 +22,7 @@ export const RickApiHandler = ({ count }) => {
   };
 
   useEffect(() => {
-    getRickData();
+     getRickData();
   }, [count]);
 
   if (errors !== "") {
