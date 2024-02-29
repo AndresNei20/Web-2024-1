@@ -1,9 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { Filters } from './components/Filters/Filters'
-import { Footer } from './components/Footer/Footer'
-import { Form } from './components/Form/Form'
-import { List } from './components/List/List'
+import {Form, Filters, List, Footer} from './components/index'
 
 function App() {
   const [count, setCount] = useState(0)
