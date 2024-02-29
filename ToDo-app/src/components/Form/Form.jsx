@@ -5,7 +5,7 @@ export const Form = () => {
   return (
     <div>
         <input type="text" ></input>
-    <Button></Button>
+    <Button text='Add Task'></Button>
     </div>
     
   )

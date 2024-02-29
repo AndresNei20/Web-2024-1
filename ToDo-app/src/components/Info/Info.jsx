@@ -1,7 +1,10 @@
 import './Info.css'
 
-export const Info = () => {
+const completed = 10
+const total = 13
+
+export const Info = ({completed,total}) => {
   return (
-    <div>Info</div>
+    <p>{completed} Completed Tasks of {total}</p>
   )
 }
