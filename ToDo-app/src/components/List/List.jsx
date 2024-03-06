@@ -9,9 +9,18 @@ export const List = ({todos}) => {
             <ul>
                 {
                     todos.map((todo, index)=>(
-                        <li key={index}>
+                        <div className='task-container'
+                             key={index}>
+                        <li>
+                            <div className='task-label'>
+                                <input type="checkbox" />
                             {todo.text}
+                            </div>
                         </li>
+                        <button>
+                            Delete
+                        </button>
+                        </div>
                     ))
                 }
             </ul>

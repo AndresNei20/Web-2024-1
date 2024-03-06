@@ -1,0 +1,16 @@
+ul{
+    background-color: lightslategray;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.task-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task-label{
+    display: flex;
+    flex-direction: row;
+}

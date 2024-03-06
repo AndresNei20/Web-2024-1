@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types'
 import './Button.css'
 
-export const Button = (/* {text} */) => {
+export const Button = ( {text} ) => {
   return (
-    <button type='submit'>{/* {text} */}</button>
+    <button 
+      type='submit'>
+        { text }
+      </button>
   )
 }
 
-Button.proptypes = {
+Button.propTypes = {
   text: PropTypes.string.isRequired
 }
