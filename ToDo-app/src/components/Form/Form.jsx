@@ -16,13 +16,22 @@ export const Form = ({addTodo}) => {
       setInputValue('')
     }
   }
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleAddTodo();
+    }
+  }
+
   return (
     <div>
         <input 
           type="text"
           placeholder='Add ToDo' 
           value={inputValue}
-          onChange={handleInputChange}>
+          onChange={handleInputChange}
+          onKeyDown={handleKeyDown}>
+          
         </input>
         <button 
           type='submit'
