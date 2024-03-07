@@ -4,3 +4,13 @@
   padding: 2rem;
   text-align: center;
 }
+
+h1 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 32px;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+  text-align: start;
+}

@@ -30,14 +30,22 @@ export const Form = ({addTodo}) => {
           placeholder='Add ToDo' 
           value={inputValue}
           onChange={handleInputChange}
-          onKeyDown={handleKeyDown}>
+          onKeyDown={handleKeyDown}
+          className="input-task">
           
         </input>
-        <button 
-          type='submit'
-          onClick={handleAddTodo}>
-            Add Task
-        </button>
+
+        <div className='button-div'>
+        <button type="submit" className="btn btn--purple"
+        onClick={handleAddTodo}>
+	<span className="btn__txt">Add Tasks</span>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+</button>
+</div>
+
     </div>
     
   )
