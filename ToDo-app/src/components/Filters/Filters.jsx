@@ -1,32 +1,50 @@
+import PropTypes from 'prop-types'
 import './Filters.css'
 
 const inputText = [
     {
         id: crypto.randomUUID(),
-        type: 'All'
+        value: 'all',
+        labelText: 'All'
     },
     {
         id: crypto.randomUUID(),
-        type: 'Completed'
+        value: 'completed',
+        labelText: 'Completed'
     },
     {
         id: crypto.randomUUID(),
-        type: 'Pending'
+        value: 'pending',
+        labelText: 'Pending'
     }
 ]
 
-export const Filters = () => {
+export const Filters = ({currentFilter, setFilterValue}) => {
+
+    const handleFilterChange = ({target}) =>{
+        setFilterValue(target.value)
+    }
+
     return (
         <>
             <div className='filters-div'>
-                {inputText.map(({ type, id }) =>(
+                {inputText.map(({ value, id, labelText }) =>(
                     <label key={id}>
-                        <input type="radio" />
-                        {type}
+                        <input type="radio"
+                               name='filter'
+                               onChange={handleFilterChange}
+                               value={value}
+                               checked={currentFilter===value}/>
+                        {labelText}
                     </label>
                 ))
                 }
             </div>
         </>
     )
+}
+
+Filters.propTypes = {
+    currentFilter: PropTypes.string.isRequired,
+    setFilterValue: PropTypes.func.isRequired
 }

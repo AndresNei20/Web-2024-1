@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react';
 import './List.css'
 
-export const List = ({ todos }) => {
-    const [tasks, setTasks] = useState([]);
+export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
+/*     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
         const initializedTasks = todos.map((todo) => ({
@@ -24,7 +23,7 @@ export const List = ({ todos }) => {
     const handleDeleteButtonClick = (index) => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
-  };
+  }; */
     
   console.log(todos)
 
@@ -33,21 +32,21 @@ export const List = ({ todos }) => {
             <h2>Your Tasks</h2>
             <ul>
                 {
-                    todos.map((todo, index) => (
+                    todos.map((todo) => (
                         <div className='task-container'
-                            key={index}>
+                            key={todo.id}>
                             <li>
                                 <div className='task-label'>
                                     <input
                                         type="checkbox"
-                                        checked={todo.completed || false}
-                                        onChange={() => handleCheckboxChange(index)}
+                                        checked={todo.completed}
+                                        onChange={() => onToggleCompleted(todo.id)}
                                     />
                                     
                                     {todo.text}
                                 </div>
                             </li>
-                            <button onClick={() => handleDeleteButtonClick(index)}>
+                            <button onClick={() => onDeleteTodo(todo.id)}>
                                 Delete
                             </button>
                         </div>
@@ -60,5 +59,13 @@ export const List = ({ todos }) => {
 }
 
 List.propTypes = {
-    todos: PropTypes.array.isRequired
+    todos: PropTypes.arrayOf(
+        PropTypes.shape({
+            id:PropTypes.string.isRequired,
+            text:PropTypes.string.isRequired,
+            completed:PropTypes.bool.isRequired
+        })
+    ),
+    onToggleCompleted: PropTypes.func.isRequired,
+    onDeleteTodo: PropTypes.func.isRequired
 }

@@ -11,8 +11,12 @@ export const Form = ({addTodo}) => {
 
   const handleAddTodo = () => {
     if(inputValue !== ''){
-      const newTodo = {text: inputValue}
+      const newTodo = {
+        id: crypto.randomUUID(),
+        text: inputValue,
+        completed: false}
       addTodo(newTodo)
+      console.log(newTodo)
       setInputValue('')
     }
   }
@@ -39,10 +43,10 @@ export const Form = ({addTodo}) => {
         <button type="submit" className="btn btn--purple"
         onClick={handleAddTodo}>
 	<span className="btn__txt">Add Tasks</span>
-	<i class="btn__bg" aria-hidden="true"></i>
-	<i class="btn__bg" aria-hidden="true"></i>
-	<i class="btn__bg" aria-hidden="true"></i>
-	<i class="btn__bg" aria-hidden="true"></i>
+	<i className="btn__bg" aria-hidden="true"></i>
+	<i className="btn__bg" aria-hidden="true"></i>
+	<i className="btn__bg" aria-hidden="true"></i>
+	<i className="btn__bg" aria-hidden="true"></i>
 </button>
 </div>
 
