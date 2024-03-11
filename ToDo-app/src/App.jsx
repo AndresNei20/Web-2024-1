@@ -31,6 +31,9 @@ function App() {
       todo.id === id ? {...todo, completed: !todo.completed} : todo
     }))
   }
+  /* ¨
+  TODO toggleCompleted its not working at all PENDING 
+  */
 
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id))

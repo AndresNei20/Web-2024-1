@@ -2,29 +2,6 @@ import PropTypes from 'prop-types'
 import './List.css'
 
 export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
-/*     const [tasks, setTasks] = useState([]);
-
-    useEffect(() => {
-        const initializedTasks = todos.map((todo) => ({
-          text: todo.text,
-          completed: todo.completed || false,
-        }));
-        setTasks(initializedTasks);
-      }, [todos]);
-    
-    
-    const handleCheckboxChange = (index) => {
-        const updatedTasks = [...tasks];
-        updatedTasks[index].completed = !updatedTasks[index].completed;
-        todos[index].completed = updatedTasks[index].completed;
-        setTasks(updatedTasks);
-      };
-    
-    const handleDeleteButtonClick = (index) => {
-    const updatedTasks = tasks.filter((_, i) => i !== index);
-    setTasks(updatedTasks);
-  }; */
-    
   console.log(todos)
 
     return (
