@@ -29,14 +29,16 @@ export const Filters = ({currentFilter, setFilterValue}) => {
         <>
             <div className='filters-div'>
                 {inputText.map(({ value, id, labelText }) =>(
-                    <label key={id}>
+    
+                    <label  className='radio 'key={id}>
                         <input type="radio"
-                               name='filter'
+                               name='radio'
                                onChange={handleFilterChange}
                                value={value}
                                checked={currentFilter===value}/>
-                        {labelText}
+                       <span>{labelText}</span> 
                     </label>
+                
                 ))
                 }
             </div>

@@ -44,10 +44,14 @@ function App() {
       <h1>Welcome to your To-do List</h1>
       <Form addTodo={handleAddTodo}/>
       <Filters currentFilter={filterValue} setFilterValue={handleFilterChange}/>
+      
+      <div className='list-div'>
       <List todos={handleFilterTodos()}
             onToggleCompleted={toggleTodoCompleted}
             onDeleteTodo={deleteTodo}/>
       <Footer/>
+      </div>
+      
     </>
   )
 }

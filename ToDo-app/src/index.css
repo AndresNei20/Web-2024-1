@@ -6,6 +6,10 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: rgb(57, 49, 209);
+  background-image: url(./assets/wallpaper.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-blend-mode:soft-light;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

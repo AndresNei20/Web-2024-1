@@ -23,7 +23,9 @@ export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
                                     {todo.text}
                                 </div>
                             </li>
-                            <button onClick={() => onDeleteTodo(todo.id)}>
+                            <button 
+                            className='delete-individual'
+                            onClick={() => onDeleteTodo(todo.id)}>
                                 Delete
                             </button>
                         </div>

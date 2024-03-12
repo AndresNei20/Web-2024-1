@@ -1,8 +1,11 @@
 ul{
-    background-color: lightslategray;
+    background-color: rgba(171, 181, 255, 0.533);
     display: flex;
     flex-direction: column;
     gap: 10px;
+    border-radius: 20px;
+    list-style: none;
+    margin: 5%;
 }
 .task-container{
     display: flex;
@@ -13,4 +16,24 @@ ul{
 .task-label{
     display: flex;
     flex-direction: row;
+    
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 32px;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(15, 11, 66);
+    padding: 2px;
+    padding-top: 3%;
+    text-align: center;
+}
+
+.delete-individual {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(95, 68, 218);
+    color: white;
 }
