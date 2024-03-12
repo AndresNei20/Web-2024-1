@@ -19,6 +19,8 @@ export const Form = ({onSubmit}) => {
   }
   }
 
+  const buttonClass = inputValue ? "btn btn--purple" : "btn-off";
+
   return (
   <form onSubmit={handleSubmit}>
     <input 
@@ -31,7 +33,7 @@ export const Form = ({onSubmit}) => {
     <div className='button-div'>
       <button 
         type="submit" 
-        className="btn btn--purple">
+        className={buttonClass}>
         <span className="btn__txt">
               Add Tasks
         </span>
