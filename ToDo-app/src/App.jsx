@@ -7,8 +7,16 @@ function App() {
 
   const [filterValue, setFilterValue] = useState('all')
 
-  const handleAddTodo = (newTodo) => {
-    setTodos([...todos, newTodo])
+
+  const createTodo = (todoTitle) => {
+    const newTodo = {
+      id:crypto.randomUUID(),
+      title: todoTitle,
+      completed: false
+    }
+    const todosTemp = [...todos, newTodo]
+
+    setTodos(todosTemp)
   }
 
   const handleFilterChange = (newFilter) => {
@@ -27,13 +35,10 @@ function App() {
   }
 
   const toggleTodoCompleted = (id) => {
-    setTodos(todos.map(todo => {
+    setTodos(todos.map(todo => 
       todo.id === id ? {...todo, completed: !todo.completed} : todo
-    }))
+    ))
   }
-  /* ¨
-  TODO toggleCompleted its not working at all PENDING 
-  */
 
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id))
@@ -42,7 +47,7 @@ function App() {
   return (
     <>
       <h1>Welcome to your To-do List</h1>
-      <Form addTodo={handleAddTodo}/>
+      <Form onSubmit={createTodo}/>
       <Filters currentFilter={filterValue} setFilterValue={handleFilterChange}/>
       
       <div className='list-div'>
