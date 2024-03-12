@@ -9,21 +9,21 @@ export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
             <h2>Your Tasks</h2>
             <ul>
                 {
-                    todos.map((todo) => (
+                    todos.map(({id, completed, title}) => (
                         <div className='task-container'
-                            key={todo.id}>
+                             key={id}>
                             <li>
-                                <div className='task-label'>
-                                    <input
-                                        type="checkbox"
-                                        checked={todo.completed}
-                                        onChange={() => onToggleCompleted(todo.id)}
-                                    />
-                                    
-                                    {todo.text}
+                                <div 
+                                className='task-label'>
+                                <input
+                                    type="checkbox"
+                                    checked={completed}
+                                    onChange={() => onToggleCompleted(id)}
+                                />
+                                {title}
                                 </div>
                             </li>
-                            <button onClick={() => onDeleteTodo(todo.id)}>
+                            <button onClick={() => onDeleteTodo(id)}>
                                 Delete
                             </button>
                         </div>
@@ -31,7 +31,6 @@ export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
                 }
             </ul>
         </div>
-
     )
 }
 
@@ -39,7 +38,7 @@ List.propTypes = {
     todos: PropTypes.arrayOf(
         PropTypes.shape({
             id:PropTypes.string.isRequired,
-            text:PropTypes.string.isRequired,
+            title:PropTypes.string.isRequired,
             completed:PropTypes.bool.isRequired
         })
     ),
