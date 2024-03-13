@@ -1,11 +1,10 @@
 import { Button } from '../Button/Button'
-import { Info } from '../Info/Info'
 import './Footer.css'
 
 export const Footer = () => {
   return (
     <div className='footer-tasks'>
-    <Info></Info>
+    <p>{/* {completed} */} Completed Tasks of {/* {total} */}</p>
     <Button text="clear all completed"></Button>
     </div>
   )
