@@ -22,7 +22,6 @@ export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
 
     return (
         <div>
-            <h2>Your Tasks</h2>
             <ul>
                 {todos.map(({ id, completed, title }) => (
                     <div

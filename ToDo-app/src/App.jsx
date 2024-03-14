@@ -58,12 +58,18 @@ function App() {
     <>
       <h1>Welcome to your To-do List</h1>
       <Form onSubmit={createTodo}/>
-      <Filters currentFilter={filterValue} setFilterValue={handleFilterChange}/>
+      <Filters currentFilter={filterValue} 
+               setFilterValue={handleFilterChange}/>
       
       <div className='list-div'>
-      <List todos={handleFilterTodos()}
+      <h2>Your Tasks</h2>
+      {todos.length > 0 
+      ? <List todos={handleFilterTodos()}
             onToggleCompleted={toggleTodoCompleted}
             onDeleteTodo={deleteTodo}/>
+      : (<p>No tasks created</p>)
+      }
+
       <Footer allTodos={todos.length} todosCompleted={countCompletedTodo()}/>
       </div>
       
