@@ -7,7 +7,7 @@ export const Button = ( {text, onClick} ) => {
       type='submit'
       onClick={onClick}
       >
-        { text }
+      { text }
       </button>
   )
 }

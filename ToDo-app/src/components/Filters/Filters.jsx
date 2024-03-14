@@ -27,21 +27,20 @@ export const Filters = ({currentFilter, setFilterValue}) => {
 
     return (
         <>
-            <div className='filters-div'>
-                {inputText.map(({ value, id, labelText }) =>(
-    
-                    <label  className='radio 'key={id}>
-                        <input type="radio"
-                               name='radio'
-                               onChange={handleFilterChange}
-                               value={value}
-                               checked={currentFilter===value}/>
-                       <span>{labelText}</span> 
-                    </label>
-                
-                ))
-                }
-            </div>
+        <div className='filters-div'>
+            {inputText.map(({ value, id, labelText }) =>(
+                <label  className='radio 'key={id}>
+                     <input 
+                        type="radio"
+                        name='radio'
+                        onChange={handleFilterChange}
+                        value={value}
+                        checked={currentFilter===value}/>
+                    <span>{labelText}</span> 
+                </label>  
+            ))
+            }
+        </div>
         </>
     )
 }

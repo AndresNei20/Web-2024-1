@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types'
 import { Button } from '../Button/Button'
 import './Footer.css'
-import React from 'react';
 
 export const Footer = ({ todosCompleted, allTodos, completedTasks }) => {
   
   
   return (
-    <div className='footer-tasks'>
+    <div 
+      className='footer-tasks'>
     <p>{todosCompleted} Completed Tasks of {allTodos}</p>
-    <Button text="Clear All Completed" onClick={completedTasks} />
+    <Button 
+      text="Clear All Completed" 
+      onClick={completedTasks} />
     </div>
   )
 }

@@ -75,11 +75,11 @@ function App() {
       : (<p>No tasks created</p>)
       }
 
-<Footer
-  allTodos={todos.length}
-  todosCompleted={countCompletedTodo()}
-  completedTasks={filterCompleted} 
-/>
+      <Footer
+        allTodos={todos.length}
+        todosCompleted={countCompletedTodo()}
+        completedTasks={filterCompleted} 
+      />
       </div>
       
     </>
