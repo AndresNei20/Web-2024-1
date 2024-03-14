@@ -1,13 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import {Form, Filters, List, Footer} from './components/index'
 
+const initTodos = JSON.parse(window.localStorage.getItem('todos')) ?? []
+
 function App() {
-  const [todos, setTodos]= useState([]);
+  const [todos, setTodos]= useState(initTodos);
 
   const [filterValue, setFilterValue] = useState('all')
 
+  useEffect(()=>{
+    window.localStorage.setItem('todos', JSON.stringify(todos))
+  },[todos])
 
+//Create todo
   const createTodo = (todoTitle) => {
     const newTodo = {
       id:crypto.randomUUID(),
