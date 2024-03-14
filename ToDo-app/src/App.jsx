@@ -54,6 +54,11 @@ function App() {
     return todos.filter(todo=>todo.completed).length
   }
 
+  const filterCompleted = ()=> {
+  const completed = todos.filter(todo => !todo.completed)
+    setTodos(completed)
+  }
+
   return (
     <>
       <h1>Welcome to your To-do List</h1>
@@ -70,7 +75,11 @@ function App() {
       : (<p>No tasks created</p>)
       }
 
-      <Footer allTodos={todos.length} todosCompleted={countCompletedTodo()}/>
+<Footer
+  allTodos={todos.length}
+  todosCompleted={countCompletedTodo()}
+  completedTasks={filterCompleted} 
+/>
       </div>
       
     </>
