@@ -23,6 +23,7 @@ export const Form = ({onSubmit}) => {
 
   return (
   <form onSubmit={handleSubmit}>
+   <div className='form-div'>
     <input 
       type="text"
       placeholder='Add ToDo' 
@@ -30,6 +31,7 @@ export const Form = ({onSubmit}) => {
       onChange={handleInputChange}
       className="input-task">   
     </input>
+    
     <div className='button-div'>
       <button 
         type="submit" 
@@ -42,6 +44,7 @@ export const Form = ({onSubmit}) => {
         <i className="btn__bg" aria-hidden="true"></i>
         <i className="btn__bg" aria-hidden="true"></i>
       </button>
+      </div>
     </div>
 
   </form>
