@@ -44,6 +44,10 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id))
   }
 
+  const countCompletedTodo = ()=>{
+    return todos.filter(todo=>todo.completed).length
+  }
+
   return (
     <>
       <h1>Welcome to your To-do List</h1>
@@ -54,7 +58,7 @@ function App() {
       <List todos={handleFilterTodos()}
             onToggleCompleted={toggleTodoCompleted}
             onDeleteTodo={deleteTodo}/>
-      <Footer/>
+      <Footer allTodos={todos.length} todosCompleted={countCompletedTodo()}/>
       </div>
       
     </>
