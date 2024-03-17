@@ -1,26 +1,25 @@
 import PropTypes from 'prop-types'
-import { useEffect , useState } from 'react'; 
+import { useEffect, useState } from 'react'
 import './List.css'
 
 const colors = {
-    completed: 'CAF7E7', // Color for completed tasks  
-};
+  completed: 'CAF7E7' // Color for completed tasks
+}
 
 export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
-   
-    const [completedTasks, setCompletedTasks] = useState({});
-  
-    const handleToggleCompleted = id => {
-        const updatedCompletedTasks = { ...completedTasks, [id]: !completedTasks[id] };
-        setCompletedTasks(updatedCompletedTasks);
-        onToggleCompleted(id); // Call the parent component function to update todo completion
-    };
+  const [completedTasks, setCompletedTasks] = useState({})
 
-    useEffect(() => {
-        console.log(todos);
-    }, [todos]);
+  const handleToggleCompleted = id => {
+    const updatedCompletedTasks = { ...completedTasks, [id]: !completedTasks[id] }
+    setCompletedTasks(updatedCompletedTasks)
+    onToggleCompleted(id) // Call the parent component function to update todo completion
+  }
 
-    return (
+  useEffect(() => {
+    console.log(todos)
+  }, [todos])
+
+  return (
         <div>
             <ul>
                 {todos.map(({ id, completed, title }) => (
@@ -50,20 +49,17 @@ export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
                 ))}
             </ul>
         </div>
-    );
-};
+  )
+}
 
 List.propTypes = {
-    todos: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
-            completed: PropTypes.bool.isRequired
-        })
-    ),
-    onToggleCompleted: PropTypes.func.isRequired,
-    onDeleteTodo: PropTypes.func.isRequired
-};
-
-  
-
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired
+    })
+  ),
+  onToggleCompleted: PropTypes.func.isRequired,
+  onDeleteTodo: PropTypes.func.isRequired
+}

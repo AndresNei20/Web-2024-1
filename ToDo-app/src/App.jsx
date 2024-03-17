@@ -1,22 +1,22 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import {Form, Filters, List, Footer} from './components/index'
+import { Form, Filters, List, Footer } from './components/index'
 
 const initTodos = JSON.parse(window.localStorage.getItem('todos')) ?? []
 
-function App() {
-  const [todos, setTodos]= useState(initTodos);
+function App () {
+  const [todos, setTodos] = useState(initTodos)
 
   const [filterValue, setFilterValue] = useState('all')
 
-  useEffect(()=>{
+  useEffect(() => {
     window.localStorage.setItem('todos', JSON.stringify(todos))
-  },[todos])
+  }, [todos])
 
-//Create todo
+  // Create todo
   const createTodo = (todoTitle) => {
     const newTodo = {
-      id:crypto.randomUUID(),
+      id: crypto.randomUUID(),
       title: todoTitle,
       completed: false
     }
@@ -30,58 +30,66 @@ function App() {
   }
 
   const handleFilterTodos = () => {
-    switch(filterValue){
+    switch (filterValue) {
       case 'completed':
-        return todos.filter(todo => todo.completed === true);
+        return todos.filter((todo) => todo.completed === true)
       case 'pending':
-        return todos.filter(todo => todo.completed === false);
+        return todos.filter((todo) => todo.completed === false)
       default:
         return todos
     }
   }
 
   const toggleTodoCompleted = (id) => {
-    setTodos(todos.map(todo => 
-      todo.id === id ? {...todo, completed: !todo.completed} : todo
-    ))
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    )
   }
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id))
+    setTodos(todos.filter((todo) => todo.id !== id))
   }
 
-  const countCompletedTodo = ()=>{
-    return todos.filter(todo=>todo.completed).length
+  const countCompletedTodo = () => {
+    return todos.filter((todo) => todo.completed).length
   }
 
-  const filterCompleted = ()=> {
-  const completed = todos.filter(todo => !todo.completed)
+  const filterCompleted = () => {
+    const completed = todos.filter((todo) => !todo.completed)
     setTodos(completed)
   }
 
   return (
     <>
       <h1>Welcome to your To-do List</h1>
-      <Form onSubmit={createTodo}/>
-      <Filters currentFilter={filterValue} 
-               setFilterValue={handleFilterChange}/>
-      
-      <div className='list-div'>
-      <h2>Your Tasks</h2>
-      {todos.length > 0 
-      ? <List todos={handleFilterTodos()}
-            onToggleCompleted={toggleTodoCompleted}
-            onDeleteTodo={deleteTodo}/>
-      : (<p>No tasks created</p>)
-      }
-
-      <Footer
-        allTodos={todos.length}
-        todosCompleted={countCompletedTodo()}
-        completedTasks={filterCompleted} 
+      <Form onSubmit={createTodo} />
+      <Filters
+        currentFilter={filterValue}
+        setFilterValue={handleFilterChange}
       />
+
+      <div className="list-div">
+        <h2>Your Tasks</h2>
+        {todos.length > 0
+          ? (
+          <List
+            todos={handleFilterTodos()}
+            onToggleCompleted={toggleTodoCompleted}
+            onDeleteTodo={deleteTodo}
+          />
+            )
+          : (
+          <p>No tasks created</p>
+            )}
+
+        <Footer
+          allTodos={todos.length}
+          todosCompleted={countCompletedTodo()}
+          completedTasks={filterCompleted}
+        />
       </div>
-      
     </>
   )
 }

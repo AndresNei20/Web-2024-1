@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import './Button.css'
 
-export const Button = ( {text, onClick} ) => {
+export const Button = ({ text, onClick }) => {
   return (
-    <button 
+    <button
       type='submit'
       onClick={onClick}
       >
@@ -14,5 +14,5 @@ export const Button = ( {text, onClick} ) => {
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired
 }

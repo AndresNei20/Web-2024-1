@@ -1,40 +1,40 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'  
+import { useState } from 'react'
 import './Form.css'
 
-export const Form = ({onSubmit}) => {
-  const [inputValue, setInputValue] = useState('');
+export const Form = ({ onSubmit }) => {
+  const [inputValue, setInputValue] = useState('')
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value) 
+    setInputValue(event.target.value)
   }
 
   const handleSubmit = (e) => {
-    if(inputValue!==''){
-    e.preventDefault()
-    onSubmit(inputValue)
-    setInputValue('')
-  }else{
-    window.alert('Please enter your Task')
-  }
+    if (inputValue !== '') {
+      e.preventDefault()
+      onSubmit(inputValue)
+      setInputValue('')
+    } else {
+      window.alert('Please enter your Task')
+    }
   }
 
-  const buttonClass = inputValue ? "btn btn--purple" : "btn-off";
+  const buttonClass = inputValue ? 'btn btn--purple' : 'btn-off'
 
   return (
   <form onSubmit={handleSubmit}>
    <div className='form-div'>
-    <input 
+    <input
       type="text"
-      placeholder='Add ToDo' 
+      placeholder='Add ToDo'
       value={inputValue}
       onChange={handleInputChange}
-      className="input-task">   
+      className="input-task">
     </input>
-    
+
     <div className='button-div'>
-      <button 
-        type="submit" 
+      <button
+        type="submit"
         className={buttonClass}>
         <span className="btn__txt">
               Add Tasks
@@ -48,7 +48,7 @@ export const Form = ({onSubmit}) => {
     </div>
 
   </form>
-    
+
   )
 }
 
