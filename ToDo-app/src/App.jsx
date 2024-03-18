@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { Form, Filters, List, Footer } from './components/index'
+import { saveStorage } from './helpers/saveStorage'
 
 const initTodos = JSON.parse(window.localStorage.getItem('todos')) ?? []
 
@@ -10,7 +11,7 @@ function App () {
   const [filterValue, setFilterValue] = useState('all')
 
   useEffect(() => {
-    window.localStorage.setItem('todos', JSON.stringify(todos))
+    saveStorage('todos', todos)
   }, [todos])
 
   // Create todo
