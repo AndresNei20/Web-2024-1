@@ -4,13 +4,6 @@ import './List.css'
 import { TodoItem } from '../TodoItem/TodoItem'
 
 export const TodoList = ({ todos, onToggleCompleted, onDeleteTodo }) => {
-  const [completedTasks, setCompletedTasks] = useState({})
-
-  const handleToggleCompleted = id => {
-    const updatedCompletedTasks = { ...completedTasks, [id]: !completedTasks[id] }
-    setCompletedTasks(updatedCompletedTasks)
-    onToggleCompleted(id)
-  }
 
   useEffect(() => {
     console.log(todos)
@@ -25,7 +18,7 @@ export const TodoList = ({ todos, onToggleCompleted, onDeleteTodo }) => {
                       id={id}
                       completed={completed}
                       title={title}
-                      onToggleCompleted={handleToggleCompleted}
+                      onToggleCompleted={onToggleCompleted}
                       onDeleteTodo={onDeleteTodo}/>
                 ))}
             </ul>
