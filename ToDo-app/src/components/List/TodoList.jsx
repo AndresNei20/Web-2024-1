@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import './List.css'
 import { TodoItem } from '../TodoItem/TodoItem'
 
-export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
+export const TodoList = ({ todos, onToggleCompleted, onDeleteTodo }) => {
   const [completedTasks, setCompletedTasks] = useState({})
 
   const handleToggleCompleted = id => {
@@ -33,7 +33,7 @@ export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
   )
 }
 
-List.propTypes = {
+TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,

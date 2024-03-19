@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { Form, Filters, List, Footer } from './components/index'
+import { Form, Filters, TodoList, Footer } from './components/index'
 import { saveStorage } from './helpers/saveStorage'
 
 const initTodos = JSON.parse(window.localStorage.getItem('todos')) ?? []
@@ -75,7 +75,7 @@ function App () {
         <h2>Your Tasks</h2>
         {todos.length > 0
           ? (
-          <List
+          <TodoList
             todos={handleFilterTodos()}
             onToggleCompleted={toggleTodoCompleted}
             onDeleteTodo={deleteTodo}
