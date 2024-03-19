@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import { useEffect, useState } from 'react'
-import './List.css'
+import { useEffect } from 'react'
+import './TodoList.css'
 import { TodoItem } from '../TodoItem/TodoItem'
 
 export const TodoList = ({ todos, onToggleCompleted, onDeleteTodo }) => {
