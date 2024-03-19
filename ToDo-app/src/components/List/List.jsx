@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 import './List.css'
-
-const colors = {
-  completed: 'CAF7E7' // Color for completed tasks
-}
+import { TodoItem } from '../TodoItem/TodoItem'
 
 export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
   const [completedTasks, setCompletedTasks] = useState({})
@@ -12,7 +9,7 @@ export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
   const handleToggleCompleted = id => {
     const updatedCompletedTasks = { ...completedTasks, [id]: !completedTasks[id] }
     setCompletedTasks(updatedCompletedTasks)
-    onToggleCompleted(id) // Call the parent component function to update todo completion
+    onToggleCompleted(id)
   }
 
   useEffect(() => {
@@ -23,29 +20,13 @@ export const List = ({ todos, onToggleCompleted, onDeleteTodo }) => {
         <div>
             <ul>
                 {todos.map(({ id, completed, title }) => (
-                    <div
-                        className='task-container'
-                        key={id}
-                        style={{ backgroundColor: completed ? `#${colors.completed}` : `#${colors.pending}` }}
-                    >
-                        <li>
-                            <div className='task-label'>
-                                <input
-                                    type="checkbox"
-                                    className='checkbox'
-                                    checked={completed}
-                                    onChange={() => handleToggleCompleted(id)}
-                                />
-                                {title}
-                            </div>
-                        </li>
-                        <button
-                            className='delete-individual'
-                            onClick={() => onDeleteTodo(id)}
-                        >
-                            ⌫
-                        </button>
-                    </div>
+                    <TodoItem
+                      key={id}
+                      id={id}
+                      completed={completed}
+                      title={title}
+                      onToggleCompleted={handleToggleCompleted}
+                      onDeleteTodo={onDeleteTodo}/>
                 ))}
             </ul>
         </div>
