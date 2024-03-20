@@ -5,23 +5,31 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: rgb(57, 49, 209);
-  background-image: url(./assets/wallpaper.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode:soft-light;
+  background-color: rgb(14, 12, 52);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (min-width: 800){
-  :root{
-    background-image: url(./assets/wallpaper.png);
-    background-size: cover;
-    background-blend-mode:soft-light;
-  }
+:root::before {
+  content: "";
+  background-image: url(./assets/wallpaper.png);
+  background-repeat: repeat;
+  background-size: contain;
+  background-blend-mode: color-dodge;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1; 
+  z-index: -1; 
+}
 
+
+@media (min-width: 800px){
+  
+  
 
 }
