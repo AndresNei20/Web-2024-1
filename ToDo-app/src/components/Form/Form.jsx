@@ -40,7 +40,7 @@ export const Form = () => {
         type="submit"
         className={buttonClass}>
         <span className="btn__txt">
-              Add Tasks
+              Add
         </span>
         <i className="btn__bg" aria-hidden="true"></i>
         <i className="btn__bg" aria-hidden="true"></i>

@@ -27,7 +27,7 @@ function App() {
       <Form />
       <Filters/>
       <div className="list-div">
-        <h2>Your Tasks</h2>
+        <h2>To Do</h2>
         {todos.length > 0
           ? (<TodoList/>)
           : (<p>No tasks created</p>)}
