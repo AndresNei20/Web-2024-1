@@ -29,7 +29,7 @@ export const Form = () => {
    <div className='form-div'>
     <input
       type="text"
-      placeholder='Add ToDo'
+      placeholder='Write your task'
       value={inputValue}
       onChange={handleInputChange}
       className="input-task">
