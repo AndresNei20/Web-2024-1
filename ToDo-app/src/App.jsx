@@ -1,12 +1,13 @@
 
 import './App.css'
 import { Form, Filters, TodoList, Footer } from './components/index'
+import { TodoContextProvider } from './context/TodoContextProvider'
 import { useTodo } from './hooks/useTodo'
 
 // * We need to add the TodoContextProvider to the components Form, TodoList and look if the other components needs its
 
 function App() {
-  const { createTodo,
+/*   const { createTodo,
     filterValue,
     handleFilterChange,
     todos,
@@ -15,36 +16,22 @@ function App() {
     deleteTodo,
     countCompletedTodo,
     filterCompleted, } =
-    useTodo()
+    useTodo() */
+
+    const { todos } = useTodo()
 
   return (
     <>
       <h1>Welcome to your To-do List</h1>
-      <Form onSubmit={createTodo} />
-      <Filters
-        currentFilter={filterValue}
-        setFilterValue={handleFilterChange}
-      />
-
+    
+      <Form />
+      <Filters/>
       <div className="list-div">
         <h2>Your Tasks</h2>
         {todos.length > 0
-          ? (
-            <TodoList
-              todos={handleFilterTodos()}
-              onToggleCompleted={toggleTodoCompleted}
-              onDeleteTodo={deleteTodo}
-            />
-          )
-          : (
-            <p>No tasks created</p>
-          )}
-
-        <Footer
-          allTodos={todos.length}
-          todosCompleted={countCompletedTodo()}
-          completedTasks={filterCompleted}
-        />
+          ? (<TodoList/>)
+          : (<p>No tasks created</p>)}
+        <Footer/>
       </div>
     </>
   )

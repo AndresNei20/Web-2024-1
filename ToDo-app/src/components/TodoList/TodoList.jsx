@@ -2,8 +2,11 @@ import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 import './TodoList.css'
 import { TodoItem } from '../TodoItem/TodoItem'
+import { useTodo } from '../../hooks/useTodo'
 
-export const TodoList = ({ todos, onToggleCompleted, onDeleteTodo }) => {
+export const TodoList = () => {
+
+  const { handleFilterTodos, toggleTodoCompleted, deleteTodo, todos } = useTodo()
 
   useEffect(() => {
     console.log(todos)
@@ -12,21 +15,21 @@ export const TodoList = ({ todos, onToggleCompleted, onDeleteTodo }) => {
   return (
         <div>
             <ul>
-                {todos.map(({ id, completed, title }) => (
+                {handleFilterTodos().map(({ id, completed, title }) => ( // * im not sure about the handleFilterTodo
                     <TodoItem
                       key={id}
                       id={id}
                       completed={completed}
                       title={title}
-                      onToggleCompleted={onToggleCompleted}
-                      onDeleteTodo={onDeleteTodo}/>
+                      onToggleCompleted={toggleTodoCompleted}
+                      onDeleteTodo={deleteTodo}/>
                 ))}
             </ul>
         </div>
   )
 }
 
-TodoList.propTypes = {
+/* TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -36,4 +39,4 @@ TodoList.propTypes = {
   ),
   onToggleCompleted: PropTypes.func.isRequired,
   onDeleteTodo: PropTypes.func.isRequired
-}
+} */

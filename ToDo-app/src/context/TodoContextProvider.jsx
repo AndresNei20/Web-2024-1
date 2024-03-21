@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react"
 import { saveStorage } from '../helpers/saveStorage'
-import { TaskContext } from "./TodoContext"
+import { TodoContext } from "./TodoContext"
 
 const initTodos = JSON.parse(window.localStorage.getItem('todos')) ?? []
 
@@ -62,8 +62,10 @@ export function TodoContextProvider({ children }) {
                         setTodos(completed)
                     }
 
+                    const countAllTodos = todos.length
+
                     return (
-                        <TaskContext.Provider value = {{
+                        <TodoContext.Provider value = {{
                             createTodo,
                             filterValue,
                             handleFilterChange,
@@ -73,9 +75,10 @@ export function TodoContextProvider({ children }) {
                             deleteTodo,
                             countCompletedTodo,
                             filterCompleted,
+                            countAllTodos
                         }}>
                             {children}
-                        </TaskContext.Provider>
+                        </TodoContext.Provider>
                       
                         
                     )

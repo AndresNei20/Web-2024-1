@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import './Form.css'
+import { useTodo } from '../../hooks/useTodo'
 
-export const Form = ({ onSubmit }) => {
+export const Form = () => {
   const [inputValue, setInputValue] = useState('')
+
+  const {createTodo} = useTodo()
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value)
@@ -12,7 +15,7 @@ export const Form = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     if (inputValue !== '') {
       e.preventDefault()
-      onSubmit(inputValue)
+      createTodo(inputValue)
       setInputValue('')
     } else {
       window.alert('Please enter your Task')
@@ -51,7 +54,8 @@ export const Form = ({ onSubmit }) => {
 
   )
 }
-
+/* 
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired
 }
+ */

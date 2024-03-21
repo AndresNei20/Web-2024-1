@@ -1,23 +1,29 @@
 import PropTypes from 'prop-types'
 import { Button } from '../Button/Button'
 import './Footer.css'
+import { useTodo } from '../../hooks/useTodo'
 
-export const Footer = ({ todosCompleted, allTodos, completedTasks }) => {
+export const Footer = () => {
+
+  const { countAllTodos, countCompletedTodo, filterCompleted} = useTodo()
+
+  const handleCountCompleted = countCompletedTodo();
+
   return (
     <div
       className='footer-tasks'>
-    <p>{todosCompleted} Completed Tasks of {allTodos}</p>
+    <p>{handleCountCompleted} Completed Tasks of {countAllTodos}</p>
     <Button
       text="Clear All Completed"
-      onClick={completedTasks} />
+      onClick={filterCompleted} />
     </div>
   )
 }
 
-Footer.propTypes = {
+/* Footer.propTypes = {
   todosCompleted: PropTypes.number.isRequired,
   allTodos: PropTypes.number.isRequired,
   completedTasks: PropTypes.func.isRequired
 }
-
+ */
 export default Footer

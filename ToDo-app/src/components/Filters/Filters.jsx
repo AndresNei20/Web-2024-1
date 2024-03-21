@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import './Filters.css'
+import { useTodo } from '../../hooks/useTodo'
 
 const inputText = [
     {
@@ -19,10 +20,12 @@ const inputText = [
     }
 ]
 
-export const Filters = ({currentFilter, setFilterValue}) => {
+export const Filters = () => { // * find how to import this current filter or what
 
-    const handleFilterChange = ({target}) =>{
-        setFilterValue(target.value)
+    const {handleFilterChange, filterValue} = useTodo()
+
+    const onHandleFilterChange = ({target}) =>{
+        handleFilterChange(target.value)
     }
 
     return (
@@ -33,9 +36,9 @@ export const Filters = ({currentFilter, setFilterValue}) => {
                      <input 
                         type="radio"
                         name='radio'
-                        onChange={handleFilterChange}
+                        onChange={onHandleFilterChange}
                         value={value}
-                        checked={currentFilter===value}/>
+                        checked={filterValue===value}/>
                     <span>{labelText}</span> 
                 </label>  
             ))
@@ -45,7 +48,7 @@ export const Filters = ({currentFilter, setFilterValue}) => {
     )
 }
 
-Filters.propTypes = {
+/* Filters.propTypes = {
     currentFilter: PropTypes.string.isRequired,
     setFilterValue: PropTypes.func.isRequired
-}
+} */
