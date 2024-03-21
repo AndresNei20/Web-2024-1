@@ -17,7 +17,7 @@ export const TodoItem = ({ id, completed, title, onToggleCompleted, onDeleteTodo
     <div
         className='task-container'
         key={id}
-        style={{ backgroundColor: completed ? '#CAF7E7' : '#ccc' }}>
+        style={{ backgroundColor: completed ? '#CAF7E7' : '' }}>
         <li>
             <div className='task-label'>
                 <input
