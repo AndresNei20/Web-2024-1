@@ -1,5 +1,5 @@
 ul {
-    background-color: rgba(216, 216, 216, 0.533);
+    background-color: rgb(246, 246, 246);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -70,14 +70,10 @@ h2 {
 }
 
 .delete-individual:hover{
-    background-color: rgb(230, 81, 81);
+    background-color:rgb(223, 115, 128);
     cursor: pointer;
 }
 
-.checkbox {
-    width: 20px;
-    padding-left: 90px;
-}
 
 @media (min-width:770px){
 

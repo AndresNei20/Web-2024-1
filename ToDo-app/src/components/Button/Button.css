@@ -1,0 +1,47 @@
+.button-style {
+    padding: 15px 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    background-color: rgb(221, 221, 221);
+    border-radius: 30px;
+    outline: none !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    border: 2px solid rgb(255, 255, 255);
+    z-index: 1;
+    color: rgb(18, 21, 58);
+}
+
+.button-style:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    background: rgb(223, 115, 128);
+    transition: all 0.3s ease;
+    border-radius: 30px;
+  }
+  
+  .button-style:hover {
+    color: rgb(255, 255, 255);
+  }
+  
+  .button-style:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  
+  .button-style:active {
+    top: 2px;
+  }

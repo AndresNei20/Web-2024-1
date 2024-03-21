@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import './TodoItem.css'
+
 const colors = {
     completed: 'CAF7E7' // Color for completed tasks
   }
@@ -22,11 +24,13 @@ export const TodoItem = ({ id, completed, title, onToggleCompleted, onDeleteTodo
             <div className='task-label'>
                 <input
                     type="checkbox"
+                    id="checkbox2" 
+                    name="checkbox01"
                     className='checkbox'
                     checked={completed}
                     onChange={handleToggleCompleted}
                 />
-                {title}
+                <label> {title} </label>
              </div>
         </li>
         <button

@@ -4,6 +4,7 @@ import './Button.css'
 export const Button = ({ text, onClick }) => {
   return (
     <button
+      className='button-style'
       type='submit'
       onClick={onClick}
       >

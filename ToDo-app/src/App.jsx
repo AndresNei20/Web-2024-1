@@ -33,6 +33,7 @@ function App() {
           : (<p>No tasks created</p>)}
         <Footer/>
       </div>
+      <p className='names'> © Designed by Paola Velasquez & Andres Neira</p>
     </>
   )
 }

@@ -14,6 +14,7 @@ export const Footer = () => {
       className='footer-tasks'>
     <p>{handleCountCompleted} Completed Tasks of {countAllTodos}</p>
     <Button
+      className="clear-all-button"
       text="Clear All Completed"
       onClick={filterCompleted} />
     </div>
