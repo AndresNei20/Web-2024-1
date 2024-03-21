@@ -1,9 +1,9 @@
 
 import './App.css'
 import { Form, Filters, TodoList, Footer } from './components/index'
-import useTodo from './hooks/useTodo'
+import { useTodo } from './hooks/useTodo'
 
-
+// * We need to add the TodoContextProvider to the components Form, TodoList and look if the other components needs its
 
 function App() {
   const { createTodo,

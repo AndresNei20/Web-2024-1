@@ -1,75 +1,14 @@
-import { useEffect, useState } from "react"
-import { saveStorage } from '../helpers/saveStorage'
+import { useContext } from "react"
+import { TodoContext } from "../context/TodoContext"
 
-const useTodo = () => {
-    const initTodos = JSON.parse(window.localStorage.getItem('todos')) ?? []
+export const useTodo = () => {
 
-    const [todos, setTodos] = useState(initTodos)
-    const [filterValue, setFilterValue] = useState('all')
+    const context = useContext(TodoContext);
     
-    useEffect(() => {
-        saveStorage('todos', todos)
-    }, [todos])
-    
-    // Create todo
-    const createTodo = (todoTitle) => {
-        const newTodo = {
-            id: crypto.randomUUID(),
-            title: todoTitle,
-            completed: false
-        }
-        const todosTemp = [...todos, newTodo]
-        
-        setTodos(todosTemp)
+    if(!context){
+        throw new Error ('This component should be within TodoContextProvider')
     }
-    
-    const handleFilterChange = (newFilter) => {
-        setFilterValue(newFilter)
+    return {
+        ...context
     }
-    
-    const handleFilterTodos = () => {
-        switch (filterValue) {
-            case 'completed':
-                return todos.filter((todo) => todo.completed === true)
-                case 'pending':
-                    return todos.filter((todo) => todo.completed === false)
-                    default:
-                        return todos
-                    }
-                }
-                
-                const toggleTodoCompleted = (id) => {
-                    setTodos(
-                        todos.map((todo) =>
-                        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-                        )
-                        )
-                    }
-                    
-                    const deleteTodo = (id) => {
-                        setTodos(todos.filter((todo) => todo.id !== id))
-                    }
-                    
-                    const countCompletedTodo = () => {
-                        return todos.filter((todo) => todo.completed).length
-                    }
-                    
-                    const filterCompleted = () => {
-                        const completed = todos.filter((todo) => !todo.completed)
-                        setTodos(completed)
-                    }
-
-                    return {
-                        createTodo,
-                        filterValue,
-                        handleFilterChange,
-                        todos,
-                        handleFilterTodos,
-                        toggleTodoCompleted,
-                        deleteTodo,
-                        countCompletedTodo,
-                        filterCompleted,
-                        
-                    }
 }
-export default useTodo
