@@ -1,13 +1,18 @@
 
-import { useEffect, useState } from "react"
+import { useEffect, useReducer, useState } from "react"
 import { saveStorage } from '../helpers/saveStorage'
 import { TodoContext } from "./TodoContext"
+import { TODO_ACTIONS } from "../const/todoActions"
+import { reducerTodos } from "../reducers/todoReducer"
 
 const initTodos = JSON.parse(window.localStorage.getItem('todos')) ?? []
 
 export function TodoContextProvider({ children }) {
 
-    const [todos, setTodos] = useState(initTodos)
+    /* const [todos, setTodos] = useState(initTodos) */
+
+    const [todos, dispathTodo] = useReducer(reducerTodos, initTodos)
+
     const [filterValue, setFilterValue] = useState('all')
     
     useEffect(() => {
@@ -15,7 +20,7 @@ export function TodoContextProvider({ children }) {
     }, [todos])
     
     // Create todo
-    const createTodo = (todoTitle) => {
+/*     const createTodo = (todoTitle) => {
         const newTodo = {
             id: crypto.randomUUID(),
             title: todoTitle,
@@ -24,6 +29,14 @@ export function TodoContextProvider({ children }) {
         const todosTemp = [...todos, newTodo]
         
         setTodos(todosTemp)
+    } */
+
+    const createTodo = (todoTitle) => {
+        const action = {
+            type: TODO_ACTIONS.CREATE_TODO,
+            payload: todoTitle
+        }
+        dispathTodo(action)
     }
     
     const handleFilterChange = (newFilter) => {

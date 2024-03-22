@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import './TodoItem.css'
 
-
-
 export const TodoItem = ({ id, completed, title, onToggleCompleted, onDeleteTodo}) => {
 
     const handleToggleCompleted = () => {

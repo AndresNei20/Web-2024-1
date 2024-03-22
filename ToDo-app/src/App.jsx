@@ -4,19 +4,7 @@ import { Form, Filters, TodoList, Footer } from './components/index'
 import { TodoContextProvider } from './context/TodoContextProvider'
 import { useTodo } from './hooks/useTodo'
 
-// * We need to add the TodoContextProvider to the components Form, TodoList and look if the other components needs its
-
 function App() {
-/*   const { createTodo,
-    filterValue,
-    handleFilterChange,
-    todos,
-    handleFilterTodos,
-    toggleTodoCompleted,
-    deleteTodo,
-    countCompletedTodo,
-    filterCompleted, } =
-    useTodo() */
 
     const { todos } = useTodo()
 
