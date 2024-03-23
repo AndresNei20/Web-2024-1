@@ -1,7 +1,5 @@
-
 import './App.css'
 import { Form, Filters, TodoList, Footer } from './components/index'
-import { TodoContextProvider } from './context/TodoContextProvider'
 import { useTodo } from './hooks/useTodo'
 
 function App() {

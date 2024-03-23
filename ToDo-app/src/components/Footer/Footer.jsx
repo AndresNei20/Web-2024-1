@@ -5,7 +5,7 @@ import { useTodo } from '../../hooks/useTodo'
 
 export const Footer = () => {
 
-  const { countAllTodos, countCompletedTodo, filterCompleted} = useTodo()
+  const { countAllTodos, countCompletedTodo, filterCompletedTodos} = useTodo()
 
   const handleCountCompleted = countCompletedTodo();
 
@@ -16,7 +16,7 @@ export const Footer = () => {
     <Button
       className="clear-all-button"
       text="Clear All Completed"
-      onClick={filterCompleted} />
+      onClick={filterCompletedTodos} />
     </div>
   )
 }
