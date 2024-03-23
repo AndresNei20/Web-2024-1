@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 import './TodoList.css'
 import { TodoItem } from '../TodoItem/TodoItem'
@@ -29,14 +28,3 @@ export const TodoList = () => {
   )
 }
 
-/* TodoList.propTypes = {
-  todos: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      completed: PropTypes.bool.isRequired
-    })
-  ),
-  onToggleCompleted: PropTypes.func.isRequired,
-  onDeleteTodo: PropTypes.func.isRequired
-} */

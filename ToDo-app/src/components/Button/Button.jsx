@@ -18,8 +18,8 @@ export const Button = ({ text, onClick }) => {
       </button>
   )
 }
-/* 
+
 Button.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.number.isRequired
-} */
+  onClick: PropTypes.func.isRequired
+}

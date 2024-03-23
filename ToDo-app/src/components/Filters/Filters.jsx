@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import './Filters.css'
 import { useTodo } from '../../hooks/useTodo'
 
@@ -20,7 +19,7 @@ const inputText = [
     }
 ]
 
-export const Filters = () => { // * find how to import this current filter or what
+export const Filters = () => { 
 
     const {handleFilterChange, filterValue} = useTodo()
 
@@ -47,8 +46,3 @@ export const Filters = () => { // * find how to import this current filter or wh
         </>
     )
 }
-
-/* Filters.propTypes = {
-    currentFilter: PropTypes.string.isRequired,
-    setFilterValue: PropTypes.func.isRequired
-} */

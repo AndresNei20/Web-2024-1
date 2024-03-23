@@ -54,8 +54,4 @@ export const Form = () => {
 
   )
 }
-/* 
-Form.propTypes = {
-  onSubmit: PropTypes.func.isRequired
-}
- */
+
