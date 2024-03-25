@@ -12,19 +12,19 @@ export const TodoList = () => {
   }, [todos])
 
   return (
-        <div>
-            <ul>
-                {handleFilterTodos().map(({ id, completed, title }) => ( // * im not sure about the handleFilterTodo
-                    <TodoItem
-                      key={id}
-                      id={id}
-                      completed={completed}
-                      title={title}
-                      onToggleCompleted={toggleTodoCompleted}
-                      onDeleteTodo={deleteTodo}/>
-                ))}
-            </ul>
-        </div>
+   <div>
+       <ul>
+           {handleFilterTodos().map(({ id, completed, title }) => (
+               <TodoItem
+                 key={id}
+                 id={id}
+                 completed={completed}
+                 title={title}
+                 onToggleCompleted={toggleTodoCompleted}
+                 onDeleteTodo={deleteTodo}/>
+           ))}
+       </ul>
+   </div>
   )
 }
 

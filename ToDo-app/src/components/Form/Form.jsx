@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { useState } from 'react'
 import './Form.css'
 import { useTodo } from '../../hooks/useTodo'
@@ -49,9 +48,7 @@ export const Form = () => {
       </button>
       </div>
     </div>
-
   </form>
-
   )
 }
 

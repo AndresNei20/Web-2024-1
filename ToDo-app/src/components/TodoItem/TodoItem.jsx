@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import './TodoItem.css'
 
-export const TodoItem = ({ id, completed, title, onToggleCompleted, onDeleteTodo}) => {
+export const TodoItem = ({ id, completed, title, onToggleCompleted, onDeleteTodo }) => {
 
     const handleToggleCompleted = () => {
         onToggleCompleted(id, !completed);
@@ -17,17 +17,17 @@ export const TodoItem = ({ id, completed, title, onToggleCompleted, onDeleteTodo
         key={id}
         style={{ backgroundColor: completed ? '#CAF7E7' : '' }}>
         <li>
-            <div className='task-label'>
-                <input
-                    type="checkbox"
-                    id={`checkbox_${id}`} 
-                    name={`checkbox_${id}`}
-                    className='checkbox'
-                    checked={completed}
-                    onChange={handleToggleCompleted}
-                />
-                <label> {title} </label>
-             </div>
+          <div className='task-label'>
+              <input
+                type="checkbox"
+                id={`checkbox_${id}`} 
+                name={`checkbox_${id}`}
+                className='checkbox'
+                checked={completed}
+                onChange={handleToggleCompleted}
+              />
+              <label> {title} </label>
+          </div>
         </li>
         <button
             className='delete-individual'

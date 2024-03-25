@@ -1,5 +1,5 @@
 .radio {
-    display: inline-block; /* Change from block to inline-block */
+    display: inline-block;
     cursor: pointer;
     user-select: none;
     text-align: left;
@@ -14,8 +14,6 @@
     position: relative;
     padding-left: 30px;
   }
-  
-/*   la vuelta blanca */
 
   .radio input + span:before { 
     content: '';
@@ -59,7 +57,5 @@
     margin-left: 20px;
     margin-top: 5%;
     gap: 8%;
-   
-
   }
   

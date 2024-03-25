@@ -26,7 +26,6 @@ export function TodoContextProvider({ children }) {
         dispatchTodo(action)
     }
     
-    
     const toggleTodoCompleted = (id, completed) => {
         const toggleTodo = {
             type:TODO_ACTIONS.TOGGLE_TODO,
